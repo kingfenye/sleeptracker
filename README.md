@@ -1,10 +1,10 @@
 # sleeptracker
+Sleeptracker created in a coding camp aimed at fullstack development. 
 
-
-## FulL Stack
+## Full Stack
 ### Front End
 React
 Angular
 
 ### Back End
-Java
+Javascript
