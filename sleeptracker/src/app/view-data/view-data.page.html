@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>View All Sleep</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col size="auto">
+        <ion-button href="home" color="tertiary">Home</ion-button>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-button href="sleepiness" color="tertiary">Daytime</ion-button>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-button href="overnight" color="tertiary">Overnight</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- ADD SLEEPINESS WHEN IMPLEMENTED-->
+
+  <ion-button expand="block" (click)="getOvernightData()">All Overnight Sleep</ion-button>  
+    <ion-list *ngIf="showData">
+      <ion-button (click)="clearOvernight()"> Clear Log </ion-button>
+      <ion-item *ngFor="let data of overnight">
+            <p><strong>{{data.dateString()}}</strong></p>
+            <p>{{data.summaryString()}}</p>
+      </ion-item>
+    </ion-list>
+
+<ion-button expand="block" (click)="getSleepinessData()">Daytime Sleepiness</ion-button>  
+<ion-list *ngIf="showData1">
+  <ion-button (click)="clearSleepiness()"> Clear Log </ion-button>
+  <ion-item *ngFor="let data1 of sleepiness">
+        <p><strong>{{data1.dateString()}}</strong></p>
+        <p>{{data1.summaryString()}}</p>
+  </ion-item>
+</ion-list>
+</ion-content>
+
